@@ -1,7 +1,8 @@
-# OptiScan-Agent Pinned Dependencies
-# OpenCV AI Competition 2026 Powered by AWS
+# OptiScan-Agent Dependencies (Vercel & Cloud Compatible)
 
-opencv-python>=5.0.0.93
+opencv-python-headless>=4.8.0
+fastapi>=0.110.0
+uvicorn>=0.28.0
 streamlit>=1.38.0
 boto3>=1.43.118
 botocore>=1.43.118
