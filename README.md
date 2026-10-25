@@ -67,7 +67,7 @@ Static Automated Optical Inspection (AOI) systems suffer from high false reject 
 ### 2. Installation
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/optiscan-agent.git
+git clone https://github.com/akshatanand-cell/optiscan-agent.git
 cd optiscan-agent
 
 # Install dependencies (pinned OpenCV 5.0.0+)
@@ -118,10 +118,11 @@ docker run -p 8501:8501 optiscan-agent:latest
 
 ---
 
-## 📑 Documentation Links
+## 📑 Documentation & Video Demo
 
-- [Formal Technical Report](TECHNICAL_REPORT.md)
-- [Video Presentation Script (Under 5 Minutes)](DEMO_VIDEO_SCRIPT.md)
+- 🎥 **Full HD 1080p Video Demonstration (with Neural Voiceover & Captions):** [`optiscan_agent_demo.mp4`](optiscan_agent_demo.mp4)
+- 📄 **Formal Technical Report:** [TECHNICAL_REPORT.md](TECHNICAL_REPORT.md)
+- 🎙️ **Video Presentation Script:** [DEMO_VIDEO_SCRIPT.md](DEMO_VIDEO_SCRIPT.md)
 
 ---
 
