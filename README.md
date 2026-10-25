@@ -5,9 +5,15 @@
 
 [![OpenCV 5](https://img.shields.io/badge/OpenCV-5.0.0-blue.svg)](https://docs.opencv.org/5.x/)
 [![AWS](https://img.shields.io/badge/AWS-Bedrock%20%7C%20Graviton4-orange.svg)](https://aws.amazon.com/)
+[![Live App](https://img.shields.io/badge/Streamlit%20Cloud-Live%20Demo-brightgreen.svg)](https://optiscanagent.streamlit.app/)
 [![Python](https://img.shields.io/badge/Python-3.11-brightgreen.svg)](https://python.org)
-[![Streamlit](https://img.shields.io/badge/UI-Streamlit-red.svg)](https://streamlit.io)
 [![License](https://img.shields.io/badge/License-Apache%202.0-lightgrey.svg)](LICENSE)
+
+---
+
+## 🌐 Live Web Demo
+Experience OptiScan-Agent running live in your browser:  
+👉 **[https://optiscanagent.streamlit.app/](https://optiscanagent.streamlit.app/)**
 
 ---
 
