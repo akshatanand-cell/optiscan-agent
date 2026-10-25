@@ -1,0 +1,46 @@
+# syntax=docker/dockerfile:1
+# OptiScan-Agent: AWS Graviton4 (Arm64) Deployment Container
+# Optimized for OpenCV 5 + COOL (Cloud-Optimized OpenCV Library)
+
+FROM --platform=linux/arm64/v8 public.ecr.aws/amazonlinux/amazonlinux:2023
+
+# Set system environment
+ENV PYTHONUNBUFFERED=1 \
+    DEBIAN_FRONTEND=noninteractive \
+    OPENCV_ARM_NEON=ON \
+    AWS_DEFAULT_REGION=us-east-1
+
+# Install Amazon Linux 2023 base dependencies for Arm64 Graviton
+RUN dnf update -y && \
+    dnf install -y \
+    python3.11 \
+    python3.11-pip \
+    python3.11-devel \
+    gcc \
+    gcc-c++ \
+    mesa-libGL \
+    glib2 \
+    tar \
+    gzip && \
+    dnf clean all
+
+WORKDIR /opt/optiscan-agent
+
+# Install Python requirements
+COPY requirements.txt .
+RUN python3.11 -m pip install --no-cache-dir --upgrade pip && \
+    python3.11 -m pip install --no-cache-dir -r requirements.txt
+
+# Copy application source
+COPY core/ core/
+COPY data/ data/
+COPY app.py benchmark.py ./
+
+# Expose Streamlit UI port
+EXPOSE 8501
+
+# Healthcheck
+HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health || exit 1
+
+# Launch OptiScan-Agent dashboard on AWS Graviton
+ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
